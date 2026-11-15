@@ -4,6 +4,7 @@
 I'm a first-year Computer Science Engineering student with knowledge of Python, Python Tkinter, and SQL. I also have experience creating GitHub README files and using Canva and Adobe tools for presentation design.
 
 I have good communication and speaking skills, and I'm currently working on improving my presentation and pitching skills for hackathons. I'm eager to learn new technologies, collaborate with teams, and gain practical experience.
+
 <p align="center">
   <img src="gitme.gif" width="300" alt="Farina's Introduction">
 </p>
@@ -25,8 +26,19 @@ I have good communication and speaking skills, and I'm currently working on impr
 
 ## 📊 GitHub Analytics
 
-<p align="left">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=farinaahamed06gif&theme=dracula" alt="GitHub Streak" />
+<table>
+  <tr>
+    <td width="68%" valign="top">
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=farinaahamed06gif&bg_color=151421&color=00e5ff&line=ad7aff&point=ff2e88&area=true&hide_border=true&custom_title=Contributions%20in%20the%20Last%20Year&days=365" alt="GitHub contribution activity graph" width="100%"/>
+    </td>
+    <td width="32%" valign="top">
+      <img src="https://github-readme-stats.vercel.app/api?username=farinaahamed06gif&show_icons=true&include_all_commits=true&hide_border=true&bg_color=151421&title_color=ff2e88&text_color=00e5ff&icon_color=ffd43b&rank_icon=github" alt="GitHub statistics" width="100%"/>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=farinaahamed06gif&background=151421&ring=ad7aff&fire=ff2e88&currStreakLabel=00e5ff&sideLabels=00e5ff&currStreakNum=ffd43b&sideNums=ffd43b&dates=9ca3af&hide_border=true" alt="GitHub contribution streak" width="70%"/>
 </p>
 
 [<img src="https://img.shields.io/badge/GitHub-102216?style=for-the-badge&logo=github&logoColor=11d452"/>](https://github.com/farinaahamed06gif)
@@ -36,8 +48,9 @@ I have good communication and speaking skills, and I'm currently working on impr
 </p>
 
 <hr/>
-</p>
 
 ---
+
 ### ✍️ Random Dev Quote
+
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
