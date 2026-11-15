@@ -4,6 +4,9 @@
 I'm a first-year Computer Science Engineering student with knowledge of Python, Python Tkinter, and SQL. I also have experience creating GitHub README files and using Canva and Adobe tools for presentation design.
 
 I have good communication and speaking skills, and I'm currently working on improving my presentation and pitching skills for hackathons. I'm eager to learn new technologies, collaborate with teams, and gain practical experience.
+<p align="center">
+  <img src="src/gitme.gif" width="600" alt="GitHub animation">
+</p>
 
 ## 💻 Tech Stack
 
