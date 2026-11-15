@@ -11,13 +11,11 @@ from collections import Counter
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
-TOKEN = os.environ["GITHUB_TOKEN"]
 USERNAME = os.environ.get("GITHUB_USERNAME", "farinaahamed06gif")
 API = "https://api.github.com"
 TZ = ZoneInfo("Asia/Kolkata")
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "Authorization": f"Bearer {TOKEN}",
     "X-GitHub-Api-Version": "2022-11-28",
     "User-Agent": "profile-repository-activity-dashboard",
 }
