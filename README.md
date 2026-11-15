@@ -5,7 +5,7 @@ I'm a first-year Computer Science Engineering student with knowledge of Python, 
 
 I have good communication and speaking skills, and I'm currently working on improving my presentation and pitching skills for hackathons. I'm eager to learn new technologies, collaborate with teams, and gain practical experience.
 <p align="center">
-  <img src="src/gitme.gif" width="600" alt="GitHub animation">
+  <img src="gitme.gif" width="600" alt="Farina's Introduction">
 </p>
 
 ## 💻 Tech Stack
