@@ -26,20 +26,25 @@ I have good communication and speaking skills, and I'm currently working on impr
 
 ## 📊 GitHub Analytics
 
-<table>
-  <tr>
-    <td width="68%" valign="top">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=farinaahamed06gif&bg_color=151421&color=00e5ff&line=ad7aff&point=ff2e88&area=true&hide_border=true&custom_title=Contributions%20in%20the%20Last%20Year&days=365" alt="GitHub contribution activity graph" width="100%"/>
-    </td>
-    <td width="32%" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api?username=farinaahamed06gif&show_icons=true&include_all_commits=true&hide_border=true&bg_color=151421&title_color=ff2e88&text_color=00e5ff&icon_color=ffd43b&rank_icon=github" alt="GitHub statistics" width="100%"/>
-    </td>
-  </tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/overview.dark.svg" />
+  <img src="./assets/overview.dark.svg" alt="GitHub overview statistics" width="100%" />
+</picture>
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=farinaahamed06gif&background=151421&ring=ad7aff&fire=ff2e88&currStreakLabel=00e5ff&sideLabels=00e5ff&currStreakNum=ffd43b&sideNums=ffd43b&dates=9ca3af&hide_border=true" alt="GitHub contribution streak" width="70%"/>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/lifetime.dark.svg" />
+  <img src="./assets/lifetime.dark.svg" alt="GitHub contribution history" width="100%" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/contributions.dark.svg" />
+  <img src="./assets/contributions.dark.svg" alt="GitHub contribution streak and calendar" width="100%" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/languages.dark.svg" />
+  <img src="./assets/languages.dark.svg" alt="Most used programming languages" width="100%" />
+</picture>
 
 [<img src="https://img.shields.io/badge/GitHub-102216?style=for-the-badge&logo=github&logoColor=11d452"/>](https://github.com/farinaahamed06gif)
 [<img src="https://img.shields.io/badge/LinkedIn-102216?style=for-the-badge&logo=linkedin&logoColor=11d452"/>](https://linkedin.com/in/https://www.linkedin.com/in/farina-ahamed-0971b3348?utm_source=share_via&utm_content=profile&utm_medium=member_android)
