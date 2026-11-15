@@ -1,16 +1,6 @@
 <h1 align="center">Hi 👋, I'm Farina Ahamed</h1>
 <h3 align="center">Computer Science Engineering Student | Python Developer | Tech Enthusiast</h3>
 
-<p align="center">
-[<img src="https://img.shields.io/badge/Website-102216?style=for-the-badge&logo=aboutdotme&logoColor=11d452"/>](https://file:///C:/Users/lenovo/OneDrive/Desktop/Resume.pdf)
-[<img src="https://img.shields.io/badge/GitHub-102216?style=for-the-badge&logo=github&logoColor=11d452"/>](https://github.com/farinaahamed06gif)
-[<img src="https://img.shields.io/badge/LinkedIn-102216?style=for-the-badge&logo=linkedin&logoColor=11d452"/>](https://linkedin.com/in/https://www.linkedin.com/in/farina-ahamed-0971b3348?utm_source=share_via&utm_content=profile&utm_medium=member_android)
-[<img src="https://img.shields.io/badge/Email-102216?style=for-the-badge&logo=gmail&logoColor=11d452"/>](mailto:farinaahamed@gmail.com)
-[<img src="https://img.shields.io/badge/Instagram-102216?style=for-the-badge&logo=instagram&logoColor=11d452"/>](https://instagram.com/https://www.instagram.com/farinaah__zzz?exln=MWV6aHhtd2VxaGVzbg==)
-</p>
-
-<hr/>
-
 I'm a first-year Computer Science Engineering student with knowledge of Python, Python Tkinter, and SQL. I also have experience creating GitHub README files and using Canva and Adobe tools for presentation design.
 
 I have good communication and speaking skills, and I'm currently working on improving my presentation and pitching skills for hackathons. I'm eager to learn new technologies, collaborate with teams, and gain practical experience.
@@ -33,14 +23,18 @@ I have good communication and speaking skills, and I'm currently working on impr
 ## 📊 GitHub Analytics
 
 <p align="left">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=farinaahamed06gif&show_icons=true&theme=dracula" alt="GitHub Stats" />
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=farinaahamed06gif&layout=compact&theme=dracula" alt="Top Languages" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=farinaahamed06gif&theme=dracula" alt="GitHub Streak" />
 </p>
 
-<p align="left">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=farinaahamed06gif&bg_color=102216&color=11d452&line=11d452&point=11d452&area=true&hide_border=true" alt="Activity Graph" />
+[<img src="https://img.shields.io/badge/GitHub-102216?style=for-the-badge&logo=github&logoColor=11d452"/>](https://github.com/farinaahamed06gif)
+[<img src="https://img.shields.io/badge/LinkedIn-102216?style=for-the-badge&logo=linkedin&logoColor=11d452"/>](https://linkedin.com/in/https://www.linkedin.com/in/farina-ahamed-0971b3348?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+[<img src="https://img.shields.io/badge/Email-102216?style=for-the-badge&logo=gmail&logoColor=11d452"/>](mailto:farinaahamed@gmail.com)
+[<img src="https://img.shields.io/badge/Instagram-102216?style=for-the-badge&logo=instagram&logoColor=11d452"/>](https://instagram.com/https://www.instagram.com/farinaah__zzz?exln=MWV6aHhtd2VxaGVzbg==)
+</p>
+
+<hr/>
 </p>
 
 ---
-Built with [GPRM](https://gprm.bhalli.dev)
+### ✍️ Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
