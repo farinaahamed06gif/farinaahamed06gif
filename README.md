@@ -54,49 +54,32 @@ I have good communication and speaking skills, and I'm currently working on impr
 
 <hr/>
 
-## 💻 Developer Terminal
-
-<div align="center">
+## ✨ Beyond the Code
 
 <table>
-<tr>
-<td>
-
-```bash
-┌──(farina@github)-[~]
-└─$ whoami
-
-Farina Ahamed
-Computer Science Engineering Student
-
-┌──(farina@github)-[~]
-└─$ skills --list
-
-Python       ██████████
-React        ████████
-JavaScript   ████████
-SQL          ███████
-Node.js      ███████
-
-┌──(farina@github)-[~]
-└─$ interests
-
-AI Development
-Full Stack Development
-Hackathons
-Creative Projects
-
-┌──(farina@github)-[~]
-└─$ echo "My motto"
-
-"Turning ideas into code,
- one project at a time."
-
-└─$ _
-```
-
-</td>
-</tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎯 What I enjoy</h3>
+      <p>💡 Turning ideas into practical projects</p>
+      <p>🤝 Collaborating and learning with others</p>
+      <p>🏆 Taking part in hackathons</p>
+      <p>🎨 Exploring creative design</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🚀 Currently exploring</h3>
+      <p>
+        <img src="https://img.shields.io/badge/Artificial%20Intelligence-8B5CF6?style=flat-square" alt="Artificial Intelligence"/>
+        <img src="https://img.shields.io/badge/Full--Stack%20Development-06B6D4?style=flat-square" alt="Full Stack Development"/>
+      </p>
+      <p>
+        <img src="https://img.shields.io/badge/Open%20Source-22C55E?style=flat-square" alt="Open Source"/>
+        <img src="https://img.shields.io/badge/UI%2FUX%20Design-F472B6?style=flat-square" alt="UI UX Design"/>
+      </p>
+      <p>Always curious. Always learning. Always building.</p>
+    </td>
+  </tr>
 </table>
 
-</div>
+<p align="center">
+  <i>"Turning ideas into code, one project at a time."</i>
+</p>
