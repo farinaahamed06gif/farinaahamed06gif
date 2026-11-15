@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a combined commit-activity SVG for all owned repositories."""
+"""Build a combined commits-by-hour dashboard from the user's public, non-fork repositories."""
 import json
 import os
 import time
@@ -26,20 +26,20 @@ def api_get(path, params=None):
     url = API + path
     if params:
         url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers=HEADERS)
-    for attempt in range(4):
+    request = urllib.request.Request(url, headers=HEADERS)
+    for attempt in range(5):
         try:
-            with urllib.request.urlopen(req, timeout=45) as response:
+            with urllib.request.urlopen(request, timeout=45) as response:
                 return json.loads(response.read().decode("utf-8"))
-        except urllib.error.HTTPError as exc:
-            if exc.code == 409:
+        except urllib.error.HTTPError as error:
+            if error.code == 409:
                 return []
-            if exc.code in (403, 429) and attempt < 3:
+            if error.code in (403, 429) and attempt < 4:
                 time.sleep(2 ** (attempt + 1))
                 continue
             raise
         except (urllib.error.URLError, TimeoutError):
-            if attempt == 3:
+            if attempt == 4:
                 raise
             time.sleep(2 ** attempt)
     return []
@@ -52,23 +52,24 @@ def paged(path, params=None):
         items = api_get(path, query)
         if not isinstance(items, list) or not items:
             break
-        for item in items:
-            yield item
+        yield from items
         if len(items) < 100:
             break
         page += 1
 
 def main():
+    # The workflow's built-in GITHUB_TOKEN can read public repositories.
+    # Private repositories require a separately configured PAT with repo read access.
     repositories = []
-    for repo in paged("/user/repos", {"affiliation": "owner", "sort": "updated"}):
-        owner = (repo.get("owner") or {}).get("login", "").lower()
-        if owner == USERNAME.lower() and not repo.get("archived", False):
+    for repo in paged(f"/users/{USERNAME}/repos", {"type": "owner", "sort": "updated"}):
+        if not repo.get("fork", False):
             repositories.append(repo)
 
     hour_counts = Counter()
     repo_counts = []
     total_commits = 0
     scanned_branches = 0
+    errors = []
 
     for repo in repositories:
         full_name = repo["full_name"]
@@ -80,24 +81,22 @@ def main():
         for branch in branches:
             branch_name = branch["name"]
             scanned_branches += 1
-            encoded_branch = urllib.parse.quote(branch_name, safe="")
             try:
-                commits = paged(
+                for commit in paged(
                     f"/repos/{full_name}/commits",
                     {"author": USERNAME, "sha": branch_name},
-                )
-                for item in commits:
-                    sha = item.get("sha")
+                ):
+                    sha = commit.get("sha")
                     if not sha or sha in repo_shas:
                         continue
-                    repo_shas.add(sha)
-                    date_text = ((item.get("commit") or {}).get("author") or {}).get("date")
+                    date_text = ((commit.get("commit") or {}).get("author") or {}).get("date")
                     if not date_text:
                         continue
-                    date = datetime.fromisoformat(date_text.replace("Z", "+00:00"))
-                    hour_counts[date.astimezone(TZ).hour] += 1
-            except urllib.error.HTTPError as exc:
-                print(f"Skipping {full_name} branch {branch_name}: HTTP {exc.code}")
+                    authored_at = datetime.fromisoformat(date_text.replace("Z", "+00:00"))
+                    repo_shas.add(sha)
+                    hour_counts[authored_at.astimezone(TZ).hour] += 1
+            except urllib.error.HTTPError as error:
+                errors.append(f"{full_name}/{branch_name}: HTTP {error.code}")
 
         count = len(repo_shas)
         total_commits += count
@@ -107,75 +106,76 @@ def main():
     active_repos = sum(1 for _, count in repo_counts if count > 0)
     updated = datetime.now(timezone.utc).astimezone(TZ).strftime("%d %b %Y · %I:%M %p IST")
 
-    width, height = 1120, 650
-    parts = [
+    width, height = 1120, 690
+    svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<defs><linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b58aff"/><stop offset="100%" stop-color="#7650c8"/></linearGradient></defs>',
         '<rect width="100%" height="100%" rx="18" fill="#151421"/>',
-        '<text x="42" y="54" fill="#ff2e88" font-family="Arial,sans-serif" font-size="27" font-weight="700">All-Repositories Commit Activity</text>',
-        f'<text x="42" y="82" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="14">Combined activity across your owned repositories · Updated {xml.escape(updated)}</text>',
+        '<text x="42" y="52" fill="#ff2e88" font-family="Arial,sans-serif" font-size="27" font-weight="700">All-Repositories Commit Activity</text>',
+        f'<text x="42" y="80" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="14">Your public, non-fork repositories · Commit author time converted to IST · Updated {xml.escape(updated)}</text>',
     ]
 
-    # Summary metric cards
     metrics = [
         ("TOTAL COMMITS", f"{total_commits:,}"),
-        ("REPOSITORIES SCANNED", f"{len(repositories):,}"),
-        ("ACTIVE REPOSITORIES", f"{active_repos:,}"),
+        ("REPOSITORIES", f"{len(repositories):,}"),
+        ("WITH COMMITS", f"{active_repos:,}"),
     ]
-    card_x = [42, 405, 768]
-    for (label, value), x in zip(metrics, card_x):
-        parts.extend([
-            f'<rect x="{x}" y="110" width="330" height="94" rx="12" fill="#201d30" stroke="#343047"/>',
-            f'<text x="{x+22}" y="143" fill="#00e5ff" font-family="Arial,sans-serif" font-size="13" font-weight="700">{label}</text>',
-            f'<text x="{x+22}" y="184" fill="#ffffff" font-family="Arial,sans-serif" font-size="31" font-weight="700">{value}</text>',
+    for (label, value), x in zip(metrics, [42, 405, 768]):
+        svg.extend([
+            f'<rect x="{x}" y="105" width="330" height="92" rx="12" fill="#201d30" stroke="#343047"/>',
+            f'<text x="{x+22}" y="138" fill="#00e5ff" font-family="Arial,sans-serif" font-size="13" font-weight="700">{label}</text>',
+            f'<text x="{x+22}" y="178" fill="#ffffff" font-family="Arial,sans-serif" font-size="30" font-weight="700">{value}</text>',
         ])
 
-    # Commits by hour chart
-    parts.extend([
-        '<text x="42" y="252" fill="#ffffff" font-family="Arial,sans-serif" font-size="19" font-weight="700">Commits by Hour · IST (UTC+05:30)</text>',
-        '<text x="42" y="274" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="12">Commit author timestamps converted to India Standard Time</text>',
+    svg.extend([
+        '<text x="42" y="245" fill="#ffffff" font-family="Arial,sans-serif" font-size="19" font-weight="700">Commits by Hour · IST (UTC+05:30)</text>',
+        '<text x="42" y="267" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="12">All scanned repositories combined · 24-hour clock</text>',
     ])
-    plot_x, plot_y, plot_w, plot_h = 66, 310, 1000, 205
+
+    plot_x, plot_y, plot_w, plot_h = 66, 302, 1000, 205
     max_count = max(hour_counts.values(), default=0)
-    max_scale = max(1, max_count)
+    scale = max(1, max_count)
     for tick in range(5):
-        y = plot_y + plot_h - (plot_h * tick / 4)
-        val = round(max_scale * tick / 4)
-        parts.append(f'<line x1="{plot_x}" y1="{y:.1f}" x2="{plot_x+plot_w}" y2="{y:.1f}" stroke="#393449" stroke-width="1"/>')
-        parts.append(f'<text x="{plot_x-13}" y="{y+4:.1f}" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">{val}</text>')
+        y = plot_y + plot_h - plot_h * tick / 4
+        value = round(scale * tick / 4)
+        svg.append(f'<line x1="{plot_x}" y1="{y:.1f}" x2="{plot_x+plot_w}" y2="{y:.1f}" stroke="#393449"/>')
+        svg.append(f'<text x="{plot_x-13}" y="{y+4:.1f}" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">{value}</text>')
 
     gap = 8
     bar_w = (plot_w - gap * 23) / 24
     for hour in range(24):
         count = hour_counts[hour]
-        bar_h = (count / max_scale) * (plot_h - 8) if count else 0
+        bar_h = (count / scale) * (plot_h - 8) if count else 0
         x = plot_x + hour * (bar_w + gap)
         y = plot_y + plot_h - bar_h
         if count:
-            parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" height="{bar_h:.1f}" rx="4" fill="url(#bar)"/>')
+            svg.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" height="{bar_h:.1f}" rx="4" fill="url(#bar)"/>')
             if count == max_count:
-                parts.append(f'<text x="{x+bar_w/2:.1f}" y="{y-8:.1f}" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="11">{count}</text>')
-        parts.append(f'<text x="{x+bar_w/2:.1f}" y="{plot_y+plot_h+23}" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">{hour:02d}</text>')
-    parts.append(f'<text x="{plot_x+plot_w/2}" y="565" text-anchor="middle" fill="#00e5ff" font-family="Arial,sans-serif" font-size="12">Hour of day (IST)</text>')
+                svg.append(f'<text x="{x+bar_w/2:.1f}" y="{y-8:.1f}" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="11">{count}</text>')
+        svg.append(f'<text x="{x+bar_w/2:.1f}" y="{plot_y+plot_h+22}" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">{hour:02d}</text>')
+    svg.append(f'<text x="{plot_x+plot_w/2}" y="553" text-anchor="middle" fill="#00e5ff" font-family="Arial,sans-serif" font-size="12">Hour of day (IST)</text>')
 
-    # Repository-wise ranking
-    parts.append('<text x="42" y="605" fill="#ffffff" font-family="Arial,sans-serif" font-size="17" font-weight="700">Repository activity</text>')
-    # Compact top five repository labels along the footer
-    top = repo_counts[:5]
-    if top:
-        max_repo = max(count for _, count in top) or 1
-        x_positions = [42, 260, 478, 696, 914]
-        for (name, count), x in zip(top, x_positions):
-            short_name = name if len(name) <= 19 else name[:17] + "…"
-            parts.append(f'<text x="{x}" y="630" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="11">{xml.escape(short_name)} · {count:,}</text>')
-    else:
-        parts.append('<text x="42" y="630" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">No authored commits were found in the accessible owned repositories yet.</text>')
+    svg.append('<text x="42" y="595" fill="#ffffff" font-family="Arial,sans-serif" font-size="18" font-weight="700">Repository activity · Top 8</text>')
+    for index, (name, count) in enumerate(repo_counts[:8]):
+        col = index % 4
+        row = index // 4
+        x = 42 + col * 270
+        y = 625 + row * 30
+        label = name if len(name) <= 22 else name[:20] + "…"
+        svg.append(f'<text x="{x}" y="{y}" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">{xml.escape(label)}  ·  {count:,}</text>')
 
-    parts.append('</svg>')
+    if not repositories:
+        svg.append('<text x="42" y="625" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">No public, non-fork repositories were found.</text>')
+    if errors:
+        svg.append(f'<text x="42" y="677" fill="#e9b45c" font-family="Arial,sans-serif" font-size="10">Some branches could not be read: {len(errors)} (see workflow logs)</text>')
+    svg.append('</svg>')
+
     os.makedirs("assets", exist_ok=True)
     with open("assets/all-repositories-activity.svg", "w", encoding="utf-8") as file:
-        file.write("\n".join(parts))
-    print(f"Generated dashboard: {len(repositories)} repositories, {total_commits} commits, {scanned_branches} branches.")
+        file.write("\n".join(svg))
+    print(f"Generated combined dashboard: {len(repositories)} public repositories, {total_commits} commits, {scanned_branches} branches.")
+    if errors:
+        print("\n".join(errors))
 
 if __name__ == "__main__":
     main()
