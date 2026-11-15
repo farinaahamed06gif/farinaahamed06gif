@@ -52,6 +52,12 @@ I have good communication and speaking skills, and I'm currently working on impr
   <img src="./assets/all-repositories-activity.svg" alt="Combined commit activity across all public, non-fork repositories, grouped by hour in India Standard Time" width="100%" />
 </p>
 
+### 📈 All-Repositories Commit Activity
+
+<p align="center">
+  <img src="./assets/all-repositories-activity.svg" alt="Combined commit activity across all public, non-fork repositories, grouped by hour in India Standard Time" width="100%" />
+</p>
+
 [<img src="https://img.shields.io/badge/GitHub-102216?style=for-the-badge&logo=github&logoColor=11d452"/>](https://github.com/farinaahamed06gif)
 [<img src="https://img.shields.io/badge/LinkedIn-102216?style=for-the-badge&logo=linkedin&logoColor=11d452"/>](https://linkedin.com/in/https://www.linkedin.com/in/farina-ahamed-0971b3348?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 [<img src="https://img.shields.io/badge/Email-102216?style=for-the-badge&logo=gmail&logoColor=11d452"/>](mailto:farinaahamed@gmail.com)
