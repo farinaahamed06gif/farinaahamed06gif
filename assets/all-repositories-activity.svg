@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690">
+<defs><linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b58aff"/><stop offset="100%" stop-color="#7650c8"/></linearGradient></defs>
+<rect width="100%" height="100%" rx="18" fill="#151421"/>
+<text x="42" y="52" fill="#ff2e88" font-family="Arial,sans-serif" font-size="27" font-weight="700">All-Repositories Commit Activity</text>
+<text x="42" y="80" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="14">Your public, non-fork repositories · Commit author time converted to IST · Updated 15 Nov 2026 · 10:43 PM IST</text>
+<rect x="42" y="105" width="330" height="92" rx="12" fill="#201d30" stroke="#343047"/>
+<text x="64" y="138" fill="#00e5ff" font-family="Arial,sans-serif" font-size="13" font-weight="700">TOTAL COMMITS</text>
+<text x="64" y="178" fill="#ffffff" font-family="Arial,sans-serif" font-size="30" font-weight="700">124</text>
+<rect x="405" y="105" width="330" height="92" rx="12" fill="#201d30" stroke="#343047"/>
+<text x="427" y="138" fill="#00e5ff" font-family="Arial,sans-serif" font-size="13" font-weight="700">REPOSITORIES</text>
+<text x="427" y="178" fill="#ffffff" font-family="Arial,sans-serif" font-size="30" font-weight="700">7</text>
+<rect x="768" y="105" width="330" height="92" rx="12" fill="#201d30" stroke="#343047"/>
+<text x="790" y="138" fill="#00e5ff" font-family="Arial,sans-serif" font-size="13" font-weight="700">WITH COMMITS</text>
+<text x="790" y="178" fill="#ffffff" font-family="Arial,sans-serif" font-size="30" font-weight="700">7</text>
+<text x="42" y="245" fill="#ffffff" font-family="Arial,sans-serif" font-size="19" font-weight="700">Commits by Hour · IST (UTC+05:30)</text>
+<text x="42" y="267" fill="#a9a6bd" font-family="Arial,sans-serif" font-size="12">All scanned repositories combined · 24-hour clock</text>
+<line x1="66" y1="507.0" x2="1066" y2="507.0" stroke="#393449"/>
+<text x="53" y="511.0" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">0</text>
+<line x1="66" y1="455.8" x2="1066" y2="455.8" stroke="#393449"/>
+<text x="53" y="459.8" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">8</text>
+<line x1="66" y1="404.5" x2="1066" y2="404.5" stroke="#393449"/>
+<text x="53" y="408.5" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">16</text>
+<line x1="66" y1="353.2" x2="1066" y2="353.2" stroke="#393449"/>
+<text x="53" y="357.2" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">25</text>
+<line x1="66" y1="302.0" x2="1066" y2="302.0" stroke="#393449"/>
+<text x="53" y="306.0" text-anchor="end" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">33</text>
+<text x="83.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">00</text>
+<rect x="108.0" y="465.2" width="34.0" height="41.8" rx="4" fill="url(#bar)"/>
+<text x="125.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">01</text>
+<rect x="150.0" y="477.2" width="34.0" height="29.8" rx="4" fill="url(#bar)"/>
+<text x="167.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">02</text>
+<rect x="192.0" y="483.1" width="34.0" height="23.9" rx="4" fill="url(#bar)"/>
+<text x="209.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">03</text>
+<rect x="234.0" y="495.1" width="34.0" height="11.9" rx="4" fill="url(#bar)"/>
+<text x="251.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">04</text>
+<text x="293.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">05</text>
+<rect x="318.0" y="501.0" width="34.0" height="6.0" rx="4" fill="url(#bar)"/>
+<text x="335.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">06</text>
+<text x="377.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">07</text>
+<text x="419.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">08</text>
+<text x="461.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">09</text>
+<text x="503.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">10</text>
+<rect x="528.0" y="489.1" width="34.0" height="17.9" rx="4" fill="url(#bar)"/>
+<text x="545.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">11</text>
+<text x="587.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">12</text>
+<text x="629.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">13</text>
+<rect x="654.0" y="495.1" width="34.0" height="11.9" rx="4" fill="url(#bar)"/>
+<text x="671.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">14</text>
+<rect x="696.0" y="429.4" width="34.0" height="77.6" rx="4" fill="url(#bar)"/>
+<text x="713.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">15</text>
+<rect x="738.0" y="459.2" width="34.0" height="47.8" rx="4" fill="url(#bar)"/>
+<text x="755.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">16</text>
+<rect x="780.0" y="417.5" width="34.0" height="89.5" rx="4" fill="url(#bar)"/>
+<text x="797.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">17</text>
+<rect x="822.0" y="495.1" width="34.0" height="11.9" rx="4" fill="url(#bar)"/>
+<text x="839.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">18</text>
+<rect x="864.0" y="453.3" width="34.0" height="53.7" rx="4" fill="url(#bar)"/>
+<text x="881.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">19</text>
+<rect x="906.0" y="417.5" width="34.0" height="89.5" rx="4" fill="url(#bar)"/>
+<text x="923.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">20</text>
+<rect x="948.0" y="489.1" width="34.0" height="17.9" rx="4" fill="url(#bar)"/>
+<text x="965.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">21</text>
+<rect x="990.0" y="310.0" width="34.0" height="197.0" rx="4" fill="url(#bar)"/>
+<text x="1007.0" y="302.0" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="11">33</text>
+<text x="1007.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">22</text>
+<rect x="1032.0" y="495.1" width="34.0" height="11.9" rx="4" fill="url(#bar)"/>
+<text x="1049.0" y="529" text-anchor="middle" fill="#b8b5c9" font-family="Arial,sans-serif" font-size="11">23</text>
+<text x="566.0" y="553" text-anchor="middle" fill="#00e5ff" font-family="Arial,sans-serif" font-size="12">Hour of day (IST)</text>
+<text x="42" y="595" fill="#ffffff" font-family="Arial,sans-serif" font-size="18" font-weight="700">Repository activity · Top 8</text>
+<text x="42" y="625" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">creator-connect-  ·  39</text>
+<text x="312" y="625" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">farinaahamed06gif  ·  33</text>
+<text x="582" y="625" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">collab-nest  ·  26</text>
+<text x="852" y="625" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">AI-ML-Project  ·  18</text>
+<text x="42" y="655" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">FariLoginpage  ·  4</text>
+<text x="312" y="655" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">githubtutorial  ·  3</text>
+<text x="582" y="655" fill="#c9c6d8" font-family="Arial,sans-serif" font-size="12">Employeedetails  ·  1</text>
+</svg>
