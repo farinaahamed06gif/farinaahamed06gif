@@ -28,7 +28,6 @@ jobs:
 
       - name: Generate combined all-repository commit dashboard
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: python3 scripts/generate_repo_activity.py
 
