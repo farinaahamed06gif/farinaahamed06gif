@@ -56,6 +56,51 @@ I have good communication and speaking skills, and I'm currently working on impr
 
 ---
 
-### ✍️ Random Dev Quote
 
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+## 💻 Developer Terminal
+
+<div align="center">
+
+<table>
+<tr>
+<td>
+
+```bash
+┌──(farina@github)-[~]
+└─$ whoami
+
+Farina Ahamed
+Computer Science Engineering Student
+
+┌──(farina@github)-[~]
+└─$ skills --list
+
+Python       ██████████
+React        ████████
+JavaScript   ████████
+SQL          ███████
+Node.js      ███████
+
+┌──(farina@github)-[~]
+└─$ interests
+
+AI Development
+Full Stack Development
+Hackathons
+Creative Projects
+
+┌──(farina@github)-[~]
+└─$ echo "My motto"
+
+"Turning ideas into code,
+ one project at a time."
+
+└─$ _
+```
+
+</td>
+</tr>
+</table>
+
+</div>
+
