@@ -65,7 +65,7 @@ I have good communication and speaking skills, and I'm currently working on impr
 <tr>
 <td>
 
-```bash
+```mermaid
 ┌──(farina@github)-[~]
 └─$ whoami
 
