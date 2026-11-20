@@ -67,14 +67,14 @@ I have good communication and speaking skills, and I'm currently working on impr
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎯 What I enjoy</h3>
+      <h3>😄 What I enjoy</h3>
       <p>💡 Turning ideas into practical projects</p>
       <p>🤝 Collaborating and learning with others</p>
       <p>🏆 Taking part in hackathons</p>
       <p>🎨 Exploring creative design</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🚀 Currently exploring</h3>
+      <h3> 🎯Currently exploring</h3>
       <p>
         <img src="https://img.shields.io/badge/Artificial%20Intelligence-8B5CF6?style=flat-square" alt="Artificial Intelligence"/>
         <img src="https://img.shields.io/badge/Full--Stack%20Development-06B6D4?style=flat-square" alt="Full Stack Development"/>
